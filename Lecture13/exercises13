@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+import os,sys,subprocess,shutil
+
+my_file=open('data.csv')
+for line in my_file:
+	parts=line.split(",")
+	species=parts[0]
+	geneseqs=parts[1].upper()
+	seqlengths=len(parts[1])
+	genenames=parts[2]
+	expressionlevel=int(parts[3])
+	if (species=='Drosophila melanogaster' or species=='Drosophila simulans'):
+		print("Gene name is: ",genenames)
+
+my_file.close()
+ 
