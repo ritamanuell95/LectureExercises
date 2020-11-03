@@ -1,0 +1,10 @@
+#!/usr/bin/python3 
+
+dna_seqs=open('input.txt')
+trimmedDNA=open('trimmedDNA.txt','w')
+for line in dna_seqs:
+	trimmedDNA.write(line[14:]+'\n')
+	print(len(line))
+
+trimmedDNA.close()
+
