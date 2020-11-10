@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+import os, sys, subprocess, shutil
+
+#Exercise1
+def average_aa(seq_aa, aa="M"):
+	length=len(seq_aa)
+	aa_count=seq_aa.upper().count(aa.upper())
+	aa_content=(aa_count/length)*100
+	return aa_content
+	
+
+assert average_aa("MSRSLLLRFLLFLLLLPPLP", "r") == round(10)
+
+#Exercise2
+def average_aa(seq_aa, aas=['M','A','I','L','F','W','Y','V']):
+	length=len(seq_aa)
+	total=0
+	i=0
+	for e in aas:
+		if e==aas[i]:
+    			aas_count=seq_aa.upper().count(aas.upper())
+			total+=aas_count
+			i+=1
+			aas_content=(total/length)*100
+	return (aas_content,aas)
+
+assert round(average_aa("MSRSLLLRFLLFLLLLPPLP", ['F', 'S', 'L'])) == 70
