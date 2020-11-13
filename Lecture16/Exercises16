@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+import os,sys, shutil, re
+
+accnums=[
+'xkn59438',
+'yhdck2',
+'eihd39d9',
+'chdsye847',
+'hedle3455',
+'xjhd53e',
+'45da',
+'de37dp',
+]
+
+trueaccs=[]
+for element in accnums:
+	if re.search(r'5', element):
+		trueaccs.append(element)  
+
+print(','.join(trueaccs)+' sequences have 5 in them.')
+    		
+trueaccs=[]
+for element in accnums:
+	if re.search(r'd|e', element):
+		trueaccs.append(element)
+print(','.join(trueaccs)+' sequences have d or e in them.')
+
+trueaccs=[]
+for element in accnums:
+        if re.search(r'de', element):
+                trueaccs.append(element)
+print(','.join(trueaccs)+' sequences have de in them.')
+
+trueaccs=[]
+for element in accnums:
+        if re.search(r'd.*e', element):
+                trueaccs.append(element)
+print(','.join(trueaccs)+' sequences have d \"something\" e in them without being adjacent.')
+
+trueaccs=[]
+for element in accnums:
+        if re.search(r'd.e', element):
+                trueaccs.append(element)
+print(','.join(trueaccs)+' sequences have d \"something\" e in them.')
+
+trueaccs=[]
+for element in accnums:
+	if re.search(r'd', element) and re.search(r'e', element):
+		trueaccs.append(element) 
+print(','.join(trueaccs)+' sequences have d and e in them in any order.')
+
+trueaccs=[]
+for element in accnums:
+        if re.search(r'\Ax|\Ay', element):
+                trueaccs.append(element)
+print(','.join(trueaccs)+' sequences start with x or y.')
+
+trueaccs=[]
+for element in accnums:
+        if re.search(r'\Ax|\Ay', element) and re.search(r'e$', element):
+                trueaccs.append(element)
+print(','.join(trueaccs)+' sequences start with x or y and end with e.')
+
